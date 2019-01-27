@@ -25,7 +25,8 @@ class List extends React.Component {
 
   fetchCurrencies = () => {
     const { page } = this.state;
-    fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=20`)
+    const perPage = 5; 
+    fetch(`${API_URL}/cryptocurrencies?page=${page}&perPage=${perPage}`)
       .then(handleResponse)
       .then(data => {
         console.log("Success", data);
